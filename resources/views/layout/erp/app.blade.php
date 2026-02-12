@@ -298,6 +298,20 @@
     {{-- <script src="{{ asset('assets/vendor/apexchart/apexchart.js') }}"></script> --}}
     {{-- <script src="{{ asset('assets/js/dashboard/dashboard-1.js') }}"></script> --}}
     @endif
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            if (window.jQuery && jQuery.fn.selectpicker) {
+                jQuery('select[data-content]').each(function(){
+                    const $el = jQuery(this);
+                    if (!$el.hasClass('selectpicker')) {
+                        $el.addClass('selectpicker');
+                    }
+                });
+                jQuery('.selectpicker').selectpicker('render');
+                jQuery('.selectpicker').selectpicker('refresh');
+            }
+        });
+    </script>
 
 </body>
 

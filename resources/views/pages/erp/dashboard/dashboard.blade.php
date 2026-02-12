@@ -47,10 +47,10 @@ $completionRate = $completionRate ?? 0;
                 <h1 class="page-title mb-2">Welcome to Abir's FoodCourt</h1>
                 <p class="page-subtitle text-muted">
                     <i class="fas fa-calendar-alt me-2"></i>
-                    {{ now()->format('l, F d, Y') }}
+                    {{ \Carbon\Carbon::now('Asia/Dhaka')->format('l, F d, Y') }}
                     <span class="mx-3">•</span>
                     <i class="fas fa-clock me-2"></i>
-                    {{ now()->format('h:i A') }}
+                    <span id="dhakaTime">{{ \Carbon\Carbon::now('Asia/Dhaka')->format('h:i:s A') }}</span>
                 </p>
             </div>
 
@@ -147,6 +147,19 @@ $completionRate = $completionRate ?? 0;
 @section('scripts')
 <script src="{{ asset('assets/vendor/apexchart/apexchart.js') }}"></script>
 <script>
+    (function(){
+        const el = document.getElementById('dhakaTime');
+        function tick(){
+            try {
+                const now = new Date();
+                el.textContent = now.toLocaleTimeString('en-US', {
+                    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, timeZone: 'Asia/Dhaka'
+                });
+            } catch(e) {}
+        }
+        tick();
+        setInterval(tick, 1000);
+    })();
     const stockSeries = [{{ $stockAvailable }}, {{ $stockUnavailable }}, {{ $stockOut }}];
     const stockLabels = ['Available', 'Unavailable', 'Stock-Out'];
     const ordersLabels = ['Pending','Confirmed','Preparing','Ready','Delivered','Cancelled'];

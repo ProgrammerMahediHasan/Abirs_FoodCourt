@@ -173,15 +173,38 @@ Order Details
                                         <select name="menu_ids[]" class="form-select" required>
                                             <option value="">Select Menu</option>
                                             @foreach($menus as $menu)
-                                                <option value="{{ $menu->id }}">
+                                                @php
+                                                    $optionStyle = '';
+                                                    if ($menu->stock) {
+                                                        if ($menu->stock->current_quantity <= 0) {
+                                                            $optionStyle = 'color:#dc3545';
+                                                        }
+                                                    } else {
+                                                        $optionStyle = 'font-weight:700;color:#212529';
+                                                    }
+                                                @endphp
+                                                <option value="{{ $menu->id }}"
+                                                    data-content="
+                                                        {{ $menu->name }} - ৳{{ $menu->price }}
+                                                        @if($menu->stock)
+                                                            @if($menu->stock->current_quantity > 0)
+                                                                ({{ $menu->stock->current_quantity }} pcs)
+                                                            @else
+                                                                (<span style='color:#dc3545'>Out of Stock</span>)
+                                                            @endif
+                                                        @else
+                                                            (<span style='font-weight:700;color:#212529'>Unavailable</span>)
+                                                        @endif
+                                                    ">
                                                     {{ $menu->name }} - ৳{{ $menu->price }}
                                                     @if($menu->stock)
-                                                        ({{ $menu->stock->current_quantity }} pcs)
-                                                        @if($menu->stock->current_quantity <= 0)
-                                                            - Out of Stock
+                                                        @if($menu->stock->current_quantity > 0)
+                                                            ({{ $menu->stock->current_quantity }} pcs)
+                                                        @else
+                                                            (Out of Stock)
                                                         @endif
                                                     @else
-                                                        - Unavailable
+                                                        (Unavailable)
                                                     @endif
                                                 </option>
                                             @endforeach
