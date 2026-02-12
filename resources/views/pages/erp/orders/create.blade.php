@@ -181,7 +181,7 @@ Order Details
                                                             - Out of Stock
                                                         @endif
                                                     @else
-                                                        (Out of Stock)
+                                                        - Unavailable
                                                     @endif
                                                 </option>
                                             @endforeach
