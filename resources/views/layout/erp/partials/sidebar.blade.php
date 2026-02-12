@@ -62,7 +62,7 @@
 
 
     {{-- Store/Inventory Module  --}}
-    <li><a class="has-arrow ai-icon" href="{{asset('assets')}}/javascript:void()" aria-expanded="false">
+    {{-- <li><a class="has-arrow ai-icon" href="{{asset('assets')}}/javascript:void()" aria-expanded="false">
             <i class="flaticon-dashboard-1"></i>
             <span class="nav-text">Production Inventory</span>
         </a>
@@ -74,8 +74,8 @@
     </li>
     <li><a href="{{('/restaurants')}}">Stock-Out</a></li>
     <li><a href="{{('/restaurants')}}">Stock-Adjustment</a></li> --}}
-    </ul>
-    </li>
+    {{-- </ul>
+    </li> --}} 
 
     {{-- Product/Inventory Module  --}}
     <li><a class="has-arrow ai-icon" href="{{asset('assets')}}/javascript:void()" aria-expanded="false">
