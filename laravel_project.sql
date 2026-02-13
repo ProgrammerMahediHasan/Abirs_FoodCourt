@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2026 at 07:14 PM
+-- Generation Time: Feb 13, 2026 at 06:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -125,6 +125,14 @@ CREATE TABLE `lar_cache` (
   `value` mediumtext NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `lar_cache`
+--
+
+INSERT INTO `lar_cache` (`key`, `value`, `expiration`) VALUES
+('laravel-cache-mahedi|127.0.0.1', 'i:1;', 1770868936),
+('laravel-cache-mahedi|127.0.0.1:timer', 'i:1770868936;', 1770868936);
 
 -- --------------------------------------------------------
 
@@ -288,11 +296,11 @@ CREATE TABLE `lar_menus` (
 --
 
 INSERT INTO `lar_menus` (`id`, `category_id`, `name`, `description`, `price`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Classic Beef Burger', 'Juicy beef patty with cheese and lettuce', 250.00, 'menus/bqcdUyKLjvbxwDyK49LxR47CWgtZxvWBzDN9Mifr.jpg', 1, '2026-01-05 04:05:13', '2026-01-17 22:06:56'),
-(2, 1, 'Chicken Burger', 'Crispy chicken burger with mayo', 220.00, 'menus/eVupJelhG1z4lqk69TK3Iu5X5rA2ii8YlgufS7YP.jpg', 1, '2026-01-05 04:05:13', '2026-01-09 00:24:24'),
-(3, 2, 'Margherita Pizza', 'Classic cheese pizza with tomato sauce', 550.00, 'menus/l6AAfapgQrYtJCMEgQi9Xp9cwkQFM9dkGVeDvyAk.jpg', 1, '2026-01-05 04:05:13', '2026-01-09 00:23:09'),
-(4, 2, 'Pepperoni Pizza', 'Pepperoni pizza with mozzarella cheese', 650.00, 'menus/gTUHdkrQ8l1K5HMmkPFiOQni2jyF2cDsQP1MBqnO.jpg', 1, '2026-01-05 04:05:13', '2026-01-09 00:21:07'),
-(5, 3, 'Creamy Alfredo Pasta', 'Pasta in creamy alfredo sauce', 480.00, 'menus/3LgjysvQ3LMS1tzmerjqhgTySctwEZcpHIQpqTGc.jpg', 1, '2026-01-05 04:05:13', '2026-01-09 00:20:01'),
+(1, 1, 'Classic Beef Burger', 'Juicy beef patty with cheese and lettuce', 250.00, 'menus/MVwLJuDuK2RUTb69R5jEoSzn0x1Qz4J6otF3nBey.jpg', 1, '2026-01-05 04:05:13', '2026-02-12 06:57:37'),
+(2, 1, 'Chicken Burger', 'Crispy chicken burger with mayo', 220.00, 'menus/OkCm2OY9X0GyKrRLb9xt47p2JGUl2H3Gr8UA6sp2.jpg', 1, '2026-01-05 04:05:13', '2026-02-12 07:00:40'),
+(3, 2, 'Margherita Pizza', 'Classic cheese pizza with tomato sauce', 550.00, 'menus/6VUcLl0QSZFcheH8ZaqsL7gxiWGkg8VmAgzKd4BO.jpg', 1, '2026-01-05 04:05:13', '2026-02-12 07:02:09'),
+(4, 2, 'Pepperoni Pizza', 'Pepperoni pizza with mozzarella cheese', 650.00, 'menus/wsMtCOakgOaHcR5LiosuPMYJw8WjbTAwvUlgkCdB.jpg', 1, '2026-01-05 04:05:13', '2026-02-12 07:03:19'),
+(5, 3, 'Creamy Alfredo Pasta', 'Pasta in creamy alfredo sauce', 480.00, 'menus/G59m2V7a9mC7Q5yxqXQQkJ5Iuhn1tLlSW6hWC8tV.jpg', 1, '2026-01-05 04:05:13', '2026-02-12 07:03:48'),
 (6, 3, 'Spicy Arrabiata Pasta', 'Pasta with spicy tomato sauce', 460.00, 'menus/dQzH6a4kMM1IEAy8vemydB6ykuwa6VboJqU8xWGs.jpg', 0, '2026-01-05 04:05:13', '2026-01-09 00:18:56'),
 (7, 4, 'Chicken Fried Rice', 'Fried rice with chicken and vegetables', 380.00, 'menus/rYKGBIH2yunJdSB3urpuVHvecKLSgcPwpfQMyDQM.jpg', 1, '2026-01-05 04:05:13', '2026-01-09 00:17:45'),
 (8, 4, 'Beef Biryani', 'Traditional beef biryani with spices', 420.00, 'menus/sCbQ9pLHwplgM5o6GlbOjKRxFsg5jo6uo3vIelnT.webp', 1, '2026-01-05 04:05:13', '2026-01-09 00:16:15'),
@@ -392,10 +400,11 @@ CREATE TABLE `lar_orders` (
 --
 
 INSERT INTO `lar_orders` (`id`, `order_no`, `customer_id`, `restaurant_id`, `order_type`, `status`, `payment_status`, `payment_method`, `invoice_token`, `subtotal`, `tax`, `discount`, `total`, `note`, `ordered_at`, `created_at`, `updated_at`) VALUES
-(10, 'ORD-20260119-0001', 12, 13, 'dine_in', 'pending', NULL, NULL, NULL, 660.00, 0.00, 0.00, 660.00, NULL, '2026-01-19 01:36:27', '2026-01-19 01:36:27', '2026-01-19 01:36:28'),
-(12, 'ORD-20260119-0002', 12, 14, 'takeaway', 'pending', NULL, NULL, NULL, 440.00, 0.00, 0.00, 440.00, NULL, '2026-01-19 01:45:54', '2026-01-19 01:45:54', '2026-01-19 01:45:54'),
-(13, 'ORD-20260119-0003', 12, 16, 'takeaway', 'confirmed', 'paid', 'cash', 'INV-20260119-V6HOY', 2350.00, 0.00, 0.00, 2350.00, NULL, '2026-01-19 05:19:31', '2026-01-19 05:19:31', '2026-01-19 09:10:20'),
-(14, 'ORD-1768845139', 1, 11, 'dine_in', 'confirmed', 'paid', 'cash', 'INV-20260119-ZIMC2', 180.00, 0.00, 0.00, 180.00, NULL, '2026-01-19 11:52:19', '2026-01-19 11:52:19', '2026-01-19 12:00:16');
+(13, 'ORD-20260119-0003', 12, 16, 'takeaway', 'delivered', 'paid', 'online', 'INV-20260212-SIRKE', 2350.00, 0.00, 0.00, 2350.00, NULL, '2026-01-19 05:19:31', '2026-01-19 05:19:31', '2026-02-12 04:07:55'),
+(14, 'ORD-1768845139', 1, 11, 'dine_in', 'delivered', 'paid', 'cod', 'INV-20260212-6CYWA', 180.00, 0.00, 0.00, 180.00, NULL, '2026-01-19 11:52:19', '2026-01-19 11:52:19', '2026-02-12 04:04:24'),
+(15, 'ORD-1770888485', 10, 11, 'dine_in', 'delivered', 'paid', 'cash', 'INV-20260212-T8TS5', 930.00, 0.00, 0.00, 930.00, NULL, '2026-02-12 03:28:05', '2026-02-12 03:28:05', '2026-02-12 04:01:40'),
+(16, 'ORD-1770894033', 1, 11, 'dine_in', 'delivered', 'paid', 'online', 'INV-20260212-KSCJB', 240.00, 0.00, 0.00, 240.00, NULL, '2026-02-12 05:00:33', '2026-02-12 05:00:33', '2026-02-12 07:45:33'),
+(19, 'ORD-1770914342', 7, 14, 'takeaway', 'confirmed', NULL, NULL, NULL, 250.00, 0.00, 0.00, 250.00, NULL, '2026-02-12 10:39:02', '2026-02-12 10:39:02', '2026-02-13 10:11:17');
 
 -- --------------------------------------------------------
 
@@ -420,11 +429,13 @@ CREATE TABLE `lar_order_items` (
 --
 
 INSERT INTO `lar_order_items` (`id`, `order_id`, `menu_id`, `quantity`, `unit_price`, `total_price`, `special_request`, `created_at`, `updated_at`) VALUES
-(1, 10, 2, 3, 220.00, 660.00, NULL, '2026-01-19 01:36:27', '2026-01-19 01:36:27'),
-(2, 12, 2, 2, 220.00, 440.00, NULL, '2026-01-19 01:45:54', '2026-01-19 01:45:54'),
 (3, 13, 2, 5, 220.00, 1100.00, NULL, '2026-01-19 05:19:31', '2026-01-19 05:19:31'),
 (4, 13, 1, 5, 250.00, 1250.00, NULL, '2026-01-19 05:19:31', '2026-01-19 05:19:31'),
-(5, 14, 17, 3, 60.00, 180.00, NULL, '2026-01-19 11:52:19', '2026-01-19 11:52:19');
+(5, 14, 17, 3, 60.00, 180.00, NULL, '2026-01-19 11:52:19', '2026-01-19 11:52:19'),
+(6, 15, 1, 3, 250.00, 750.00, NULL, '2026-02-12 03:28:05', '2026-02-12 03:28:05'),
+(7, 15, 17, 3, 60.00, 180.00, NULL, '2026-02-12 03:28:05', '2026-02-12 03:28:05'),
+(8, 16, 17, 4, 60.00, 240.00, NULL, '2026-02-12 05:00:33', '2026-02-12 05:00:33'),
+(9, 19, 1, 1, 250.00, 250.00, NULL, '2026-02-12 10:39:02', '2026-02-12 10:39:02');
 
 -- --------------------------------------------------------
 
@@ -571,9 +582,13 @@ CREATE TABLE `lar_sessions` (
 --
 
 INSERT INTO `lar_sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('8zprOkPq57k1KSw6ZabvmKiXTT4ISK7QHuFnB5RV', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiRFM0cG5vVDdOeVdiVTJTVEd2YUFxRWdsVkpmdFRTTmFKc1hWMEczVSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjI3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvbG9naW4iO3M6NToicm91dGUiO3M6NToibG9naW4iO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc2ODg0NDMxMjt9fQ==', 1768844312),
-('Glh1ERZrKJyVuVIuVuaZUutd4VmsWVW1wmztPcea', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiaGozSjRNYTNTUUN1RktBRkJOUkZ6cE9Vd0t5MUZFejBtY1A0VGNZVyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1768845029),
-('lwRChFEADWWaFrVa9nP7qIg2XSdR0PTavMj1cCsr', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiRDh6dGlSTnpFZzNGQUtZZFJ5ejR1N1FSNGlDT3FwVlZsdVVMRTlRMSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjM5OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvb3JkZXJzLzE0L3BheW1lbnQiO3M6NToicm91dGUiO3M6MTk6Im9yZGVycy5wYXltZW50LmZvcm0iO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc2ODg0NTA3MDt9fQ==', 1768846403);
+('3xpXkpmmEumepzvf4ci2gKFeyY5yLmMXANhzqA5B', 10, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiTUtjV2lRYWVoOW1OeGpTYTBtamNMc2V3NFlNd2xseGNrREVZYUtZaCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjI5OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvcHJvZmlsZSI7czo1OiJyb3V0ZSI7czoxMzoicHJvZmlsZS5pbmRleCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjEwO3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc3MDg5Mjc3MTt9fQ==', 1770915681),
+('Bvi4QrG4om2XOzORu1M53qxGqKBuxhn13g1NuYJs', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiaTRuRzI3bWZsb2ZXckRkR3NTbE5vRE9TNjhOeFZpOWhucjZORFRPRyI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozOToiaHR0cDovL2xvY2FsaG9zdC9BYmlyc19Gb29kQ291cnQvcHVibGljIjt9czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly9sb2NhbGhvc3QvQWJpcnNfRm9vZENvdXJ0L3B1YmxpYyI7czo1OiJyb3V0ZSI7Tjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1770990825),
+('cgZyAqPC1apL26lqLTOyhcoV493XMcfVr7Z4ozhT', 9, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoibHk3elo2UjRhZnUxbWhUSjZCbEtaUDFzaUdSbmpueDdSM1B5TkhzNiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjU3OiJodHRwOi8vbG9jYWxob3N0L0FiaXJzX0Zvb2RDb3VydC9wdWJsaWMvb3JkZXJzLzE5L3BheW1lbnQiO3M6NToicm91dGUiO3M6MTk6Im9yZGVycy5wYXltZW50LmZvcm0iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo5O3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTc3MDk5OTA0Mzt9fQ==', 1770999083),
+('GlTps07sN5igNOKWqy0R6atg3gZSQ2zKAMn0NYv1', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.107.1 Chrome/142.0.7444.235 Electron/39.2.7 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiQXNtYXFVem5BVFpvWktTZFdNbEJLbzVXR1FITnFZQ1NzUEI4N1BYVyI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo3ODoiaHR0cDovL2xvY2FsaG9zdC9BYmlyc19Gb29kQ291cnQvcHVibGljP2lkZV93ZWJ2aWV3X3JlcXVlc3RfdGltZT0xNzcwOTU3MjU4OTUzIjt9czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDU6Imh0dHA6Ly9sb2NhbGhvc3QvQWJpcnNfRm9vZENvdXJ0L3B1YmxpYy9sb2dpbiI7czo1OiJyb3V0ZSI7czo1OiJsb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1770957259),
+('MdkcvBNJmedQmH27cSYBMv9Nh4i7ydWhC35KFMmL', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNXY4RmhIejFmelNsTFNDSFhEY0JJUklGM3doaVdJZzRBdkhrVzJ2aiI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozOToiaHR0cDovL2xvY2FsaG9zdC9BYmlyc19Gb29kQ291cnQvcHVibGljIjt9czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly9sb2NhbGhvc3QvQWJpcnNfRm9vZENvdXJ0L3B1YmxpYyI7czo1OiJyb3V0ZSI7Tjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1770990825),
+('MXcIlSKpI2lwlN3dmUjh5JuzvXwc1OZ8KeibvYU8', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.107.1 Chrome/142.0.7444.235 Electron/39.2.7 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVXNITGZFYjJkNVppQzdNZWI5TUtXOEVxRzloWnlIdXU0SXVPdFFlTSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDU6Imh0dHA6Ly9sb2NhbGhvc3QvQWJpcnNfRm9vZENvdXJ0L3B1YmxpYy9sb2dpbiI7czo1OiJyb3V0ZSI7czo1OiJsb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1770919056),
+('yIFPMekAnYR11rqey9YwtYpnEErzEuxmYk2wtt3x', 9, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoicW43UlNRZXc0ZEo2Y3ozd3dUUzBKZ2RLRGZhUVdQQnFsQjNYZ3BlQiI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjM5OiJodHRwOi8vbG9jYWxob3N0L0FiaXJzX0Zvb2RDb3VydC9wdWJsaWMiO3M6NToicm91dGUiO047fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjk7czo0OiJhdXRoIjthOjE6e3M6MjE6InBhc3N3b3JkX2NvbmZpcm1lZF9hdCI7aToxNzcwOTIwMjMyO319', 1770920239);
 
 -- --------------------------------------------------------
 
@@ -596,8 +611,10 @@ CREATE TABLE `lar_stocks` (
 
 INSERT INTO `lar_stocks` (`id`, `menu_id`, `current_quantity`, `unit`, `created_at`, `updated_at`) VALUES
 (1, 2, 15, 'pcs', '2026-01-19 01:13:41', '2026-01-19 05:19:31'),
-(2, 1, 5, 'pcs', '2026-01-19 01:28:03', '2026-01-19 05:19:31'),
-(4, 17, 7, 'pcs', '2026-01-19 11:51:43', '2026-01-19 11:52:19');
+(2, 1, 1, 'pcs', '2026-01-19 01:28:03', '2026-02-12 10:39:02'),
+(4, 17, 0, 'pcs', '2026-01-19 11:51:43', '2026-02-12 05:00:33'),
+(5, 16, 10, 'pcs', '2026-02-12 07:16:57', '2026-02-12 07:16:57'),
+(6, 8, 5, 'pcs', '2026-02-12 08:55:23', '2026-02-12 08:55:23');
 
 -- --------------------------------------------------------
 
@@ -671,9 +688,9 @@ CREATE TABLE `lar_users` (
 --
 
 INSERT INTO `lar_users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'MAHEDI HASAN', 'afranabir03@gmail.com', NULL, '$2y$12$8BCHy7bzop/2n2BjLLgVUuen55ktPk2CRlDC1imJEcTL0ubIa/nwa', NULL, '2026-01-04 08:36:34', '2026-01-04 08:36:34'),
 (7, 'Pollob Sagor', 'pollob@example.com', NULL, '$2y$12$0c1b79cYLW1RZNSPp4U.fOFH6Kw1.s2gB/IU0TQBrxYPJCAJ//ipO', NULL, '2026-01-05 07:26:42', '2026-01-05 07:26:42'),
-(8, 'MAHEDI HASAN', 'mahedihasanabir8@gmail.com', NULL, '$2y$12$I1oHvDK8idceY4HPNVH5yO3OjkJi5k4MJGWJuQcEhlhqG8Y/ZlWZy', NULL, '2026-01-09 06:01:04', '2026-01-09 06:01:04');
+(9, 'MAHEDI HASAN', 'afranabir03@gmail.com', NULL, '$2y$12$oU52P7zP2.AudZOhIjdNaedw0bDP7L0drUzBVW./IJc5kQBcOkC5y', NULL, '2026-02-11 01:27:01', '2026-02-11 01:27:01'),
+(10, 'Anamul', 'anamul@gamil.com', NULL, '$2y$12$O04yNYns.PMwKyxqDGWeDu.W8/mxgnYd6pXPR9Fq.ccGrwrR.OP9C', NULL, '2026-02-12 04:35:58', '2026-02-12 04:35:58');
 
 -- --------------------------------------------------------
 
@@ -1037,13 +1054,13 @@ ALTER TABLE `lar_migrations`
 -- AUTO_INCREMENT for table `lar_orders`
 --
 ALTER TABLE `lar_orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `lar_order_items`
 --
 ALTER TABLE `lar_order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `lar_personal_access_tokens`
@@ -1079,7 +1096,7 @@ ALTER TABLE `lar_restaurants`
 -- AUTO_INCREMENT for table `lar_stocks`
 --
 ALTER TABLE `lar_stocks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `lar_stock_transactions`
@@ -1097,7 +1114,7 @@ ALTER TABLE `lar_suppliers`
 -- AUTO_INCREMENT for table `lar_users`
 --
 ALTER TABLE `lar_users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `migrations`
