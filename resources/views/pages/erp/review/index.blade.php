@@ -1,6 +1,6 @@
 @extends('layout.erp.app')
 @section('dashboard')
-Review
+Welcome to Abir's FoodCourt
 @endsection
 @section('content')
 

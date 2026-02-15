@@ -1,5 +1,7 @@
 @extends('layout.erp.app')
-
+@section('dashboard')
+Welcome to Abir's FoodCourt
+@endsection
 @section('content')
 
 <div class="container mt-4">
@@ -52,7 +54,7 @@
             <label for="image" class="form-label">Menu Image</label>
             <input type="file" name="image" id="image" class="form-control">
             @if($menu->image)
-                <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($menu->image) }}" alt="{{ $menu->name }}" width="100" class="mt-2">
+                <img src="{{ asset('storage/' . $menu->image) }}" alt="{{ $menu->name }}" width="100" class="mt-2">
             @endif
         </div>
 

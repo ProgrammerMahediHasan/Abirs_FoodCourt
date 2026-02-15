@@ -1,7 +1,7 @@
 @extends('layout.erp.app')
 
 @section('dashboard')
-Menu Item
+Welcome to Abir's FoodCourt
 @endsection
 
 @section('content')

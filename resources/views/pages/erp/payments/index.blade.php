@@ -1,5 +1,7 @@
 @extends('layout.erp.app')
-
+@section('dashboard')
+Welcome to Abir's FoodCourt
+@endsection
 @section('content')
 <style>
     :root {

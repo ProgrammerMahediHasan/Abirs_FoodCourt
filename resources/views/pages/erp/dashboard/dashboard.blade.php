@@ -2,6 +2,9 @@
 @section('dashboard')
 Welcome to Abir's FoodCourt
 @endsection
+
+
+
 @section('content')
 
 <style>
@@ -108,7 +111,7 @@ $completionRate = $completionRate ?? 0;
                                 <div class="card h-100 border-0 shadow-sm">
                                     <div class="position-relative">
                                         @if($menu->image)
-                                        <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($menu->image) }}" class="card-img-top" alt="{{ $menu->name }}" style="height: 180px; object-fit: cover;">
+                                        <img src="{{ asset('storage/' . $menu->image) }}" class="card-img-top" alt="{{ $menu->name }}" style="height: 180px; object-fit: cover;">
                                         @else
                                         <div class="bg-light d-flex align-items-center justify-content-center" style="height: 180px;">
                                             <i class="fas fa-hamburger fa-3x text-muted"></i>

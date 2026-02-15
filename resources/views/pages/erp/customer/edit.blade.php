@@ -1,7 +1,7 @@
 @extends('layout.erp.app')
 
 @section('dashboard')
-Edit Customer
+Welcome to Abir's FoodCourt
 @endsection
 
 @section('content')

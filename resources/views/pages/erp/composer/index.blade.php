@@ -1,7 +1,7 @@
 @extends('layout.erp.app')
-@section('dashboard')
+{{-- @section('dashboard')
 Composer
-@endsection
+@endsection --}}
 
 @section('content')
 

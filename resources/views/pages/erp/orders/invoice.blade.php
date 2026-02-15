@@ -1,4 +1,7 @@
 @extends('layout.erp.app')
+@section('dashboard')
+Welcome to Abir's FoodCourt
+@endsection
 @section('content')
 <div class="container d-flex justify-content-center p-4">
     <div id="invoiceContent" style="
